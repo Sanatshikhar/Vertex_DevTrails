@@ -289,23 +289,30 @@ Coordinated fraud using:
 
 # 🧩 16. System Architecture
 
-[ User Mobile App ]  
-↓  
-[ FastAPI Backend ]  
-↓  
-| Trigger Engine |  
-| (Weather / API / Social) |  
-↓  
-[ Validation Engine ]  
-(AI + Behavior Analysis)  
-↓  
-[ Decision Engine ]  
-↓  
-[ Payout System ]  
-(Mock UPI)  
-↓  
-[ Database ]  
-(PostgreSQL + Redis)
+## 🔄 Overview
+
+| Layer | Component | Role |
+|------|----------|------|
+| User | Mobile App | User interaction (onboarding, policy, claims) |
+| API | FastAPI Backend | Handles requests and business logic |
+| Trigger | Trigger Engine | Detects disruptions (weather, API, social) |
+| Validation | AI Engine | Verifies activity & detects fraud |
+| Decision | Decision Engine | Approves / holds / rejects claims |
+| Execution | Payout System | Processes payouts (mock UPI) |
+| Data | DB + Cache | Stores data (PostgreSQL, Redis) |
+
+---
+
+## 🔁 Flow
+
+| Step | Process |
+|------|--------|
+| 1 | Disruption detected |
+| 2 | User mapped to location |
+| 3 | AI validates activity |
+| 4 | Decision engine evaluates |
+| 5 | Payout triggered |
+| 6 | Data stored |
 
 ---
 
